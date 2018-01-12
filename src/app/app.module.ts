@@ -10,7 +10,9 @@ import {
  } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { MessagesComponent } from './messages.component'
+import { MessagesComponent } from './messages.component';
+import { WebService } from './web.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -20,13 +22,14 @@ import { MessagesComponent } from './messages.component'
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpModule,
     MatButtonModule,
     MatCardModule,
     MatInputModule,
     MatSnackBarModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [WebService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
