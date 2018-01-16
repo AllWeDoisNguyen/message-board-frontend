@@ -15,9 +15,9 @@ import { WebService } from './web.service'
 export class MessagesComponent {
     constructor(private webService : WebService) {}
 
-    async ngOnInit() {
+    async ngOnInit() { // helps you from putting too much in the constructor
        var response =  await this.webService.getMessages();
        this.messages = response.json();
     }
-    messages = [{text: 'some text', owner: 'Tim'},{text: 'other message', owner: 'Jane'}];
+    messages = []; // receiving from api
 }
